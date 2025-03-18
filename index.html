@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agim Uchechukwu Chigozie - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+</head>
+<body>
+    <div class="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">Agim Uchechukwu Chigozie</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="profile-container">
+                <img src="https://media.licdn.com/dms/image/v2/C4E03AQEnRlkGTyE9Zg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1617294133846?e=1747872000&v=beta&t=Uy9YCiM7HvvwbWiGWt98TInlEHU40PvzGTXUkjze4CY" alt="Agim Uchechukwu Chigozie" class="profile-picture">
+            </div>
+            <h1>Hi, I'm <span class="highlight">Agim Uchechukwu Chigozie</span></h1>
+            <p>Full-Stack Software Engineer</p>
+            <a href="#projects" class="cta-button">View My Work</a>
+        </div>
+        <canvas id="hero-canvas"></canvas>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Detail-oriented Environmental Health Scientist transitioning into the tech industry with strong analytical skills and a passion for software development. Proficient in data analysis, UI/UX design, and front-end web development. Demonstrated leadership and communication skills honed through teaching and internships. Seeking a Graduate Internship in Software Engineering to leverage my technical knowledge and grow in the field.</p>
+                <div class="skills">
+                    <span>Web Development</span>
+                    <span>Mobile App Development</span>
+                    <span>UI/UX Design</span>
+                    <span>Data Analysis</span>
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>React</span>
+                    <span>Node.js</span>
+                    <span>Python</span>
+                </div>
+            </div>
+            <div class="about-3d">
+                <canvas id="about-canvas"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-3d">
+                    <canvas id="project1-canvas"></canvas>
+                </div>
+                <h3>SH_HTML_TRACK</h3>
+                <p>A simple training repository for the HTML track in Side Hustle internship cohort 6.0. Features responsive design and modern UI components.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Agimuche/SH_HTML_TRACK" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <a href="https://agimuche.github.io/SH_HTML_TRACK/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-3d">
+                    <canvas id="project2-canvas"></canvas>
+                </div>
+                <h3>ALX Pre-course</h3>
+                <p>My first repository as a full-stack engineer at ALX. Includes various programming exercises and learning materials.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Agimuche/alx-pre_course" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-3d">
+                    <canvas id="project3-canvas"></canvas>
+                </div>
+                <h3>ALX Zero Day</h3>
+                <p>Another milestone in my ALX journey, showcasing my progress in software engineering fundamentals.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Agimuche/alx-zero_day" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <div class="contact-content">
+            <form id="contact-form">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+            <div class="contact-3d">
+                <canvas id="contact-canvas"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/Agimuche" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/san-agim-uchechukwu-1b4671199/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2024 Agim Uchechukwu Chigozie. All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="three-scenes.js"></script>
+</body>
+</html> 
