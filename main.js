@@ -1,99 +1,185 @@
-// Wait for the DOM to be fully loaded
+// GSAP Registration
+gsap.registerPlugin(ScrollTrigger);
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Remove loader when page is loaded
-    const loader = document.querySelector('.loader');
-    window.addEventListener('load', () => {
-        loader.style.opacity = '0';
-        setTimeout(() => {
-            loader.style.display = 'none';
-        }, 500);
-    });
+    // 1. Custom Cursor
+    const cursor = document.querySelector('.custom-cursor');
 
-    // Mobile menu toggle
-    const menuBtn = document.querySelector('.menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-    
-    menuBtn.addEventListener('click', () => {
-        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-                // Close mobile menu if open
-                if (window.innerWidth <= 768) {
-                    navLinks.style.display = 'none';
-                }
-            }
+    document.addEventListener('mousemove', (e) => {
+        gsap.to(cursor, {
+            x: e.clientX,
+            y: e.clientY,
+            duration: 0.1
         });
     });
 
-    // Navbar background change on scroll
+    const hoverElements = document.querySelectorAll('a, button, .project-card-modern, .skill-tag');
+    hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+
+    // 2. Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const icon = themeToggle.querySelector('i');
+
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    body.className = `${savedTheme}-theme`;
+    updateThemeIcon(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+        const isLight = body.classList.contains('light-theme');
+        const newTheme = isLight ? 'dark' : 'light';
+
+        body.className = `${newTheme}-theme`;
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    });
+
+    function updateThemeIcon(theme) {
+        icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    }
+
+    // 3. Loader
+    window.addEventListener('load', () => {
+        const loader = document.querySelector('.loader');
+        gsap.to(loader, {
+            opacity: 0,
+            duration: 1,
+            ease: "power2.inOut",
+            onComplete: () => loader.style.display = 'none'
+        });
+    });
+
+    // 4. Navbar Scroll Effect
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            navbar.style.width = '95%';
+            navbar.style.top = '1rem';
         } else {
-            navbar.style.background = 'transparent';
-            navbar.style.boxShadow = 'none';
+            navbar.style.width = '90%';
+            navbar.style.top = '2rem';
         }
     });
 
-    // Form submission handling
-    const contactForm = document.getElementById('contact-form');
+    // 5. GSAP Animations
+    // Hero Text
+    gsap.from('.hero h1', {
+        y: 100,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power4.out",
+        delay: 0.5
+    });
+
+    gsap.from('.hero-description', {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        delay: 0.8
+    });
+
+    // Scroll Animations
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        const title = section.querySelector('.section-title');
+        const content = section.querySelectorAll('.about-content-wrapper, .project-grid, .contact-wrapper');
+
+        if (title) {
+            gsap.from(title, {
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%"
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            });
+        }
+
+        content.forEach(el => {
+            gsap.from(el, {
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 70%"
+                },
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            });
+        });
+    });
+
+    // Project Cards Hover Animation (CSS handled mostly, but can add GSAP)
+    document.querySelectorAll('.project-card-modern').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            gsap.to(card.querySelector('img'), { scale: 1.1, duration: 0.8 });
+        });
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card.querySelector('img'), { scale: 1, duration: 0.8 });
+        });
+    });
+
+    // 6. Smooth Scroll
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            // Remove active class from all links
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+
+            window.scrollTo({
+                top: targetElement.offsetTop - 100,
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // 7. Contact Form submission
+    const contactForm = document.getElementById('contact-form-modern');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            // Add your form submission logic here
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
+            const btn = contactForm.querySelector('.btn-submit');
+            const originalText = btn.innerHTML;
+
+            btn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
+            btn.disabled = true;
+
+            // Simulate API call
+            setTimeout(() => {
+                alert('Message sent successfully!');
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                contactForm.reset();
+            }, 2000);
         });
     }
 
-    // Intersection Observer for fade-in animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+    // 8. Mobile Menu
+    const menuBtn = document.querySelector('.menu-btn');
+    const navLinksContainer = document.querySelector('.nav-links');
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
+    if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            navLinksContainer.classList.toggle('mobile-active');
         });
-    }, observerOptions);
 
-    // Observe elements for fade-in animation
-    document.querySelectorAll('.about-content, .project-card, .contact-content').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        observer.observe(el);
-    });
-
-    // Parallax effect for hero section
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('active');
+                navLinksContainer.classList.remove('mobile-active');
+            });
         });
     }
-
-    // Handle window resize
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-            navLinks.style.display = 'flex';
-        }
-    });
-}); 
+});

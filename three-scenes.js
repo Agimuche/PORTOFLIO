@@ -1,137 +1,125 @@
-// Three.js Scene Setup
-class ThreeScene {
-    constructor(canvasId) {
-        this.canvas = document.getElementById(canvasId);
+// Enhanced Three.js Scene for Hero Background
+class HeroScene {
+    constructor() {
+        this.canvas = document.getElementById('hero-canvas');
         if (!this.canvas) return;
 
         this.scene = new THREE.Scene();
-        this.camera = new THREE.PerspectiveCamera(75, this.canvas.clientWidth / this.canvas.clientHeight, 0.1, 1000);
-        this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas, alpha: true });
-        this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
-        this.renderer.setPixelRatio(window.devicePixelRatio);
+        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        this.renderer = new THREE.WebGLRenderer({
+            canvas: this.canvas,
+            alpha: true,
+            antialias: true
+        });
+
+        this.renderer.setSize(window.innerWidth, window.innerHeight);
+        this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        this.mouse = { x: 0, y: 0 };
+        this.targetMouse = { x: 0, y: 0 };
 
         this.init();
     }
 
     init() {
-        // Add lights
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-        this.scene.add(ambientLight);
+        // Particles
+        const particlesGeometry = new THREE.BufferGeometry();
+        const count = 3000;
+        const positions = new Float32Array(count * 3);
+        const colors = new Float32Array(count * 3);
 
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-        directionalLight.position.set(5, 5, 5);
-        this.scene.add(directionalLight);
-
-        // Create different 3D objects based on canvas ID
-        switch (this.canvas.id) {
-            case 'hero-canvas':
-                this.createHeroScene();
-                break;
-            case 'about-canvas':
-                this.createAboutScene();
-                break;
-            case 'project1-canvas':
-            case 'project2-canvas':
-            case 'project3-canvas':
-                this.createProjectScene();
-                break;
-            case 'contact-canvas':
-                this.createContactScene();
-                break;
+        for (let i = 0; i < count * 3; i++) {
+            positions[i] = (Math.random() - 0.5) * 15;
+            colors[i] = Math.random();
         }
 
-        // Position camera
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+        const particlesMaterial = new THREE.PointsMaterial({
+            size: 0.02,
+            sizeAttenuation: true,
+            transparent: true,
+            alphaTest: 0.001,
+            blending: THREE.AdditiveBlending,
+            vertexColors: true
+        });
+
+        this.particles = new THREE.Points(particlesGeometry, particlesMaterial);
+        this.scene.add(this.particles);
+
+        // Abstract Shape
+        const geometry = new THREE.IcosahedronGeometry(2, 1);
+        const material = new THREE.MeshPhongMaterial({
+            color: 0x7851A9,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.3,
+            shininess: 100
+        });
+        this.mesh = new THREE.Mesh(geometry, material);
+        this.scene.add(this.mesh);
+
+        // Lights
+        const pointLight = new THREE.PointLight(0xffffff, 0.5);
+        pointLight.position.x = 2;
+        pointLight.position.y = 3;
+        pointLight.position.z = 4;
+        this.scene.add(pointLight);
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+        this.scene.add(ambientLight);
+
         this.camera.position.z = 5;
 
-        // Start animation
+        // Events
+        window.addEventListener('mousemove', (e) => this.onMouseMove(e));
+        window.addEventListener('resize', () => this.onWindowResize());
+
         this.animate();
-
-        // Handle window resize
-        window.addEventListener('resize', () => this.onWindowResize(), false);
     }
 
-    createHeroScene() {
-        // Create a geometric shape
-        const geometry = new THREE.TorusKnotGeometry(1, 0.3, 100, 16);
-        const material = new THREE.MeshPhongMaterial({
-            color: 0x4a90e2,
-            shininess: 100,
-            specular: 0xffffff
-        });
-        this.mesh = new THREE.Mesh(geometry, material);
-        this.scene.add(this.mesh);
+    onMouseMove(event) {
+        this.targetMouse.x = (event.clientX / window.innerWidth - 0.5);
+        this.targetMouse.y = (event.clientY / window.innerHeight - 0.5);
     }
 
-    createAboutScene() {
-        // Create a cube
-        const geometry = new THREE.BoxGeometry(2, 2, 2);
-        const material = new THREE.MeshPhongMaterial({
-            color: 0x4a90e2,
-            shininess: 100,
-            specular: 0xffffff
-        });
-        this.mesh = new THREE.Mesh(geometry, material);
-        this.scene.add(this.mesh);
-    }
-
-    createProjectScene() {
-        // Create a sphere
-        const geometry = new THREE.SphereGeometry(1, 32, 32);
-        const material = new THREE.MeshPhongMaterial({
-            color: 0x4a90e2,
-            shininess: 100,
-            specular: 0xffffff
-        });
-        this.mesh = new THREE.Mesh(geometry, material);
-        this.scene.add(this.mesh);
-    }
-
-    createContactScene() {
-        // Create an icosahedron
-        const geometry = new THREE.IcosahedronGeometry(1, 0);
-        const material = new THREE.MeshPhongMaterial({
-            color: 0x4a90e2,
-            shininess: 100,
-            specular: 0xffffff
-        });
-        this.mesh = new THREE.Mesh(geometry, material);
-        this.scene.add(this.mesh);
+    onWindowResize() {
+        this.camera.aspect = window.innerWidth / window.innerHeight;
+        this.camera.updateProjectionMatrix();
+        this.renderer.setSize(window.innerWidth, window.innerHeight);
     }
 
     animate() {
         requestAnimationFrame(() => this.animate());
 
-        if (this.mesh) {
-            // Rotate the 3D object
-            this.mesh.rotation.x += 0.01;
-            this.mesh.rotation.y += 0.01;
+        // Smooth mouse movement
+        this.mouse.x += (this.targetMouse.x - this.mouse.x) * 0.05;
+        this.mouse.y += (this.targetMouse.y - this.mouse.y) * 0.05;
 
-            // Add some floating motion
-            this.mesh.position.y = Math.sin(Date.now() * 0.001) * 0.2;
+        // Rotate Mesh
+        if (this.mesh) {
+            this.mesh.rotation.x += 0.001;
+            this.mesh.rotation.y += 0.002;
+            this.mesh.rotation.z += 0.001;
+
+            // Mouse Interaction
+            this.mesh.rotation.x += this.mouse.y * 0.5;
+            this.mesh.rotation.y += this.mouse.x * 0.5;
+        }
+
+        // Rotate Particles
+        if (this.particles) {
+            this.particles.rotation.y += 0.0005;
+            this.particles.rotation.x += this.mouse.y * 0.1;
+            this.particles.rotation.z += this.mouse.x * 0.2;
         }
 
         this.renderer.render(this.scene, this.camera);
     }
-
-    onWindowResize() {
-        this.camera.aspect = this.canvas.clientWidth / this.canvas.clientHeight;
-        this.camera.updateProjectionMatrix();
-        this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
-    }
 }
 
-// Initialize all Three.js scenes
+// Initialize
 document.addEventListener('DOMContentLoaded', () => {
-    const canvasIds = [
-        'hero-canvas',
-        'about-canvas',
-        'project1-canvas',
-        'project2-canvas',
-        'project3-canvas',
-        'contact-canvas'
-    ];
-
-    canvasIds.forEach(id => {
-        new ThreeScene(id);
-    });
-}); 
+    new HeroScene();
+});

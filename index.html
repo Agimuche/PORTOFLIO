@@ -1,132 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agim Uchechukwu Chigozie - Portfolio</title>
+    <title>Agim Uchechukwu Chigozie | Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Agim Uchechukwu Chigozie, a Full-Stack Software Engineer specialized in web and mobile development.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
-<body>
+
+<body class="light-theme">
+    <div class="custom-cursor"></div>
     <div class="loader">
         <div class="loader-content">
-            <div class="spinner"></div>
-            <p>Loading...</p>
+            <div class="spinner-modern"></div>
+            <p class="loader-text">Designing Experiences</p>
         </div>
     </div>
 
     <nav class="navbar">
-        <div class="logo">Agim Uchechukwu Chigozie</div>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="menu-btn">
-            <i class="fas fa-bars"></i>
+        <div class="navbar-container">
+            <div class="logo">
+                <span class="logo-text">Agim.</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="menu-btn">
+                    <div class="hamburger"></div>
+                </div>
+            </div>
         </div>
     </nav>
 
     <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="profile-container">
-                <img src="https://media.licdn.com/dms/image/v2/C4E03AQEnRlkGTyE9Zg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1617294133846?e=1747872000&v=beta&t=Uy9YCiM7HvvwbWiGWt98TInlEHU40PvzGTXUkjze4CY" alt="Agim Uchechukwu Chigozie" class="profile-picture">
-            </div>
-            <h1>Hi, I'm <span class="highlight">Agim Uchechukwu Chigozie</span></h1>
-            <p>Full-Stack Software Engineer</p>
-            <a href="#projects" class="cta-button">View My Work</a>
+        <div class="hero-background">
+            <canvas id="hero-canvas"></canvas>
         </div>
-        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-badge">Available for projects</div>
+            <h1 class="split-text">Full-Stack <span class="gradient-text">Developer</span> & Designer</h1>
+            <p class="hero-description">I build high-performance, beautiful, and user-centric digital solutions that
+                bridge the gap between imagination and reality.</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn-primary">Explore My Work</a>
+                <a href="#contact" class="btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <span>Scroll Down</span>
+        </div>
     </section>
 
     <section id="about" class="about">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>Detail-oriented Environmental Health Scientist transitioning into the tech industry with strong analytical skills and a passion for software development. Proficient in data analysis, UI/UX design, and front-end web development. Demonstrated leadership and communication skills honed through teaching and internships. Seeking a Graduate Internship in Software Engineering to leverage my technical knowledge and grow in the field.</p>
-                <div class="skills">
-                    <span>Web Development</span>
-                    <span>Mobile App Development</span>
-                    <span>UI/UX Design</span>
-                    <span>Data Analysis</span>
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>JavaScript</span>
-                    <span>React</span>
-                    <span>Node.js</span>
-                    <span>Python</span>
-                </div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Discovery</span>
+                <h2 class="section-title">About Me</h2>
+                <div class="title-underline"></div>
             </div>
-            <div class="about-3d">
-                <canvas id="about-canvas"></canvas>
+            <div class="about-content-wrapper">
+                <div class="about-image-side">
+                    <div class="profile-card">
+                        <div class="profile-frame">
+                            <img src="https://media.licdn.com/dms/image/v2/C4E03AQEnRlkGTyE9Zg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1617294133846?e=1747872000&v=beta&t=Uy9YCiM7HvvwbWiGWt98TInlEHU40PvzGTXUkjze4CY"
+                                alt="Agim Uchechukwu Chigozie" class="profile-img">
+                        </div>
+                        <div class="experience-badge">
+                            <span class="years">3+</span>
+                            <span class="exp-text">Years of<br>Exp.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text-side">
+                    <p class="about-lead">Environmental Health Scientist turned Software Engineer.</p>
+                    <p class="about-description">I blend scientific precision with creative engineering to build robust
+                        digital experiences. My journey from analyzing environmental data to architecting software
+                        systems has given me a unique perspective on problem-solving and user needs.</p>
+
+                    <div class="skills-container">
+                        <h3 class="skills-title">Technical Expertise</h3>
+                        <div class="skill-groups">
+                            <div class="skill-group">
+                                <h4>Frontend</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">React</span>
+                                    <span class="skill-tag">Next.js</span>
+                                    <span class="skill-tag">Three.js</span>
+                                    <span class="skill-tag">Tailwind</span>
+                                </div>
+                            </div>
+                            <div class="skill-group">
+                                <h4>Backend</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Node.js</span>
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">PostgreSQL</span>
+                                    <span class="skill-tag">FastAPI</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="projects" class="projects">
-        <h2>My Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <div class="project-3d">
-                    <canvas id="project1-canvas"></canvas>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Portfolio</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="project-grid">
+                <!-- Aurelia Hotel -->
+                <div class="project-card-modern">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=800"
+                            alt="Aurelia Hotel">
+                        <div class="project-overlay">
+                            <div class="project-links-modern">
+                                <a href="https://aurelia-hotels.netlify.app/" target="_blank" aria-label="Live Demo"><i
+                                        class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Hospitality</span>
+                        <h3>Aurelia Hotel & Resort</h3>
+                        <p>Luxury hospitality platform with seamless booking and premium concierge services.</p>
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>Tailwind</span>
+                            <span>Framer Motion</span>
+                        </div>
+                    </div>
                 </div>
-                <h3>SH_HTML_TRACK</h3>
-                <p>A simple training repository for the HTML track in Side Hustle internship cohort 6.0. Features responsive design and modern UI components.</p>
-                <div class="project-links">
-                    <a href="https://github.com/Agimuche/SH_HTML_TRACK" target="_blank"><i class="fab fa-github"></i> Code</a>
-                    <a href="https://agimuche.github.io/SH_HTML_TRACK/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+
+                <!-- Chef Green Kitchen -->
+                <div class="project-card-modern">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=800"
+                            alt="Chef Green">
+                        <div class="project-overlay">
+                            <div class="project-links-modern">
+                                <a href="https://chef-green-kitchen.netlify.app/" target="_blank"
+                                    aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">E-commerce</span>
+                        <h3>CHEF Green Kitchen</h3>
+                        <p>Authentic Nigerian culinary platform with online ordering and delivery systems.</p>
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>Paystack API</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SPEC Health -->
+                <div class="project-card-modern">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&q=80&w=800"
+                            alt="SPEC Health">
+                        <div class="project-overlay">
+                            <div class="project-links-modern">
+                                <a href="https://sage-pegasus-729da0.netlify.app/" target="_blank"
+                                    aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Healthcare</span>
+                        <h3>SPEC Health</h3>
+                        <p>Telemedicine platform connecting patients with verified medical professionals.</p>
+                        <div class="project-tags">
+                            <span>FastAPI</span>
+                            <span>React</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- School Harmony Hub -->
+                <div class="project-card-modern">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800"
+                            alt="School Harmony">
+                        <div class="project-overlay">
+                            <div class="project-links-modern">
+                                <a href="https://school-harmony-hub.vercel.app/" target="_blank"
+                                    aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Education</span>
+                        <h3>School Harmony Hub</h3>
+                        <p>Comprehensive management dashboard for schools and classroom collaboration.</p>
+                        <div class="project-tags">
+                            <span>Next.js</span>
+                            <span>Supabase</span>
+                            <span>Chart.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ChemLearn Nigeria -->
+                <div class="project-card-modern">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1532187863486-abf9d454666a?auto=format&fit=crop&q=80&w=800"
+                            alt="ChemLearn">
+                        <div class="project-overlay">
+                            <div class="project-links-modern">
+                                <a href="https://exquisite-kangaroo-fd67cf.netlify.app/" target="_blank"
+                                    aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">E-Learning</span>
+                        <h3>ChemLearn Nigeria</h3>
+                        <p>AI-powered chemistry platform with interactive 3D visualizations for students.</p>
+                        <div class="project-tags">
+                            <span>Three.js</span>
+                            <span>AI Integration</span>
+                            <span>React</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Previous Project 1 -->
+                <div class="project-card-modern">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800"
+                            alt="SH_HTML_TRACK">
+                        <div class="project-overlay">
+                            <div class="project-links-modern">
+                                <a href="https://github.com/Agimuche/SH_HTML_TRACK" target="_blank"
+                                    aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="https://agimuche.github.io/SH_HTML_TRACK/" target="_blank"
+                                    aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Frontend</span>
+                        <h3>SH HTML Track</h3>
+                        <p>Advanced training repository featuring modern UI components and responsive layouts.</p>
+                        <div class="project-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JS</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="project-card">
-                <div class="project-3d">
-                    <canvas id="project2-canvas"></canvas>
-                </div>
-                <h3>weather App </h3>
-                <p>My tells the weather condition of a particular place at a given time</p>
-                <div class="project-links">
-                    <a href="https://github.com/Agimuche/Weather-Web-App" target="_blank"><i class="fab fa-github"></i> Code</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-3d">
-                    <canvas id="project3-canvas"></canvas>
-                </div>
-                <h3>conference ticket generator</h3>
-                <p>A web app that helps in genarating of conference tickets for attendees</p>
-                <div class="project-links">
-                    <a href="https://github.com/Agimuche/conference-ticket-generator" target="_blank"><i class="fab fa-github"></i> Code</a>
-                </div>
+            <div class="view-all-projects">
+                <a href="https://github.com/Agimuche" target="_blank" class="btn-outline">View More on GitHub <i
+                        class="fab fa-github"></i></a>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
-        <h2>Get in Touch</h2>
-        <div class="contact-content">
-            <form id="contact-form">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Message" required></textarea>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
-            <div class="contact-3d">
-                <canvas id="contact-canvas"></canvas>
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info-panel">
+                    <div class="section-header align-left">
+                        <span class="section-subtitle">Connect</span>
+                        <h2 class="section-title">Let's Create<br>Something Great</h2>
+                    </div>
+                    <p class="contact-text">Currently open to freelance opportunities and full-time positions. Feel free
+                        to reach out!</p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                            <div class="method-details">
+                                <span>Email Me</span>
+                                <a href="mailto:agimuche15@gmail.com">agimuche15@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-circles">
+                        <a href="https://github.com/Agimuche" target="_blank" class="social-circle"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/san-agim-uchechukwu-1b4671199/" target="_blank"
+                            class="social-circle"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-panel">
+                    <form id="contact-form-modern">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" placeholder="Project Inquiry" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Tell me about your project..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="social-links">
-            <a href="https://github.com/Agimuche" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/san-agim-uchechukwu-1b4671199/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <span class="logo-text">Agim.</span>
+                </div>
+                <div class="footer-nav">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/Agimuche" target="_blank" aria-label="GitHub"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/san-agim-uchechukwu-1b4671199/" target="_blank"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <p class="footer-copy">&copy; 2024 Agim Uchechukwu Chigozie. All rights reserved.</p>
+            </div>
         </div>
-        <p>&copy; 2024 Agim Uchechukwu Chigozie. All rights reserved.</p>
     </footer>
 
     <script src="main.js"></script>
     <script src="three-scenes.js"></script>
 </body>
-</html> 
+
+</html>
