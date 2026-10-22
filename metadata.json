@@ -1,0 +1,8 @@
+{
+  "name": "Agim Uchechukwu Portfolio",
+  "description": "Portfolio of Agim Uchechukwu Chigozie Daniel, a Full-Stack Software Engineer & Environmental Health Scientist specialized in modern web and mobile development.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

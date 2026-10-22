@@ -1,111 +1,44 @@
-# 3D Portfolio Website
+# Agim Uchechukwu - Full-Stack Portfolio
 
-A modern, responsive portfolio website featuring 3D elements using Three.js, smooth animations, and a clean design.
+A high-performance, modern portfolio built with **Next.js 15 (App Router)**, **TypeScript**, **Tailwind CSS**, and **Three.js**, showcasing the work and engineering journey of **Agim Uchechukwu Chigozie Daniel** — an Environmental Health Scientist turned Full-Stack Software Engineer.
 
 ## Features
 
-- Responsive design that works on all devices
-- Interactive 3D elements using Three.js
-- Smooth scrolling and animations
-- Contact form
-- Mobile-friendly navigation
-- Loading animation
-- Parallax scrolling effects
-- Modern UI/UX design
+- **Interactive 3D Hero Scene**: Dynamic WebGL particle field and wireframe icosahedron responding to cursor movement using Three.js.
+- **Scientist to Engineer Journey**: Interactive visual transformation showcase highlighting analytical scientific precision and full-stack system architecture.
+- **Filterable Project Showcase**: 8 featured web applications with tech badges, live previews, and GitHub repositories.
+- **Glassmorphic Navigation**: Floating responsive navbar with scroll-linked geometry and mobile drawer.
+- **Dark & Light Mode**: Instant theme switching persisted in `localStorage` and synchronized with system preferences.
+- **Custom Cursor & Smooth Transitions**: Interactive physics-based cursor and viewport animations powered by `motion/react`.
+- **Interactive Contact Form**: In-app validation, async simulation, loading indicators, and celebratory feedback without intrusive dialogs.
 
-## Technologies Used
+## Tech Stack
 
-- HTML5
-- CSS3 (with CSS Variables and Flexbox/Grid)
-- JavaScript (ES6+)
-- Three.js for 3D graphics
-- GSAP for animations
+- **Framework**: Next.js 15+ (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **3D Graphics**: Three.js
+- **Animations**: Motion (`motion/react`)
+- **Icons**: Lucide React
+- **Confetti**: Canvas-confetti
 
 ## Getting Started
 
-1. Clone this repository:
+1. Install dependencies:
 ```bash
-git clone https://github.com/yourusername/3d-portfolio.git
+npm install
 ```
 
-2. Navigate to the project directory:
+2. Start the development server:
 ```bash
-cd 3d-portfolio
+npm run dev
 ```
 
-3. Open `index.html` in your browser or use a local server.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Customization
+## Build for Production
 
-### Colors
-You can customize the color scheme by modifying the CSS variables in `styles.css`:
-```css
-:root {
-    --primary-color: #2a2a2a;
-    --secondary-color: #4a90e2;
-    --text-color: #333;
-    --background-color: #ffffff;
-    --accent-color: #ff6b6b;
-}
-```
-
-### 3D Objects
-Modify the 3D objects in `three-scenes.js` by changing the geometries and materials in the respective scene creation methods.
-
-### Content
-Update the content in `index.html` to match your personal information, projects, and contact details.
-
-## Deployment to Vercel
-
-1. Create a Vercel account at [vercel.com](https://vercel.com)
-
-2. Install Vercel CLI (optional):
 ```bash
-npm install -g vercel
+npm run build
+npm run start
 ```
-
-3. Deploy using one of these methods:
-
-### Method 1: Using Vercel CLI
-```bash
-vercel
-```
-
-### Method 2: Using Vercel Dashboard
-1. Push your code to a GitHub repository
-2. Go to [vercel.com/new](https://vercel.com/new)
-3. Import your repository
-4. Click "Deploy"
-
-## Performance Optimization
-
-- The website uses lazy loading for 3D scenes
-- Images are optimized for web use
-- CSS and JavaScript are minified for production
-- Three.js scenes are only initialized when in viewport
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Opera (latest)
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- Three.js for 3D graphics
-- GSAP for animations
-- Font Awesome for icons 
