@@ -13,8 +13,10 @@ export default function Navbar({ currentTheme, onToggleTheme }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
 
@@ -65,14 +67,9 @@ export default function Navbar({ currentTheme, onToggleTheme }: NavbarProps) {
       <nav
         className={`w-full max-w-6xl rounded-full border transition-all duration-300 flex items-center justify-between px-6 py-3 mt-4 md:mt-5 ${
           isScrolled
-            ? "bg-[var(--glass-bg)] backdrop-blur-xl border-[var(--glass-border)] shadow-lg"
-            : "bg-[var(--glass-bg)] backdrop-blur-md border-[var(--glass-border)]"
+            ? "bg-[var(--glass-bg)] backdrop-blur-xl border-[var(--glass-border)] shadow-lg shadow-[#7851A9]/10"
+            : "bg-[var(--glass-bg)] backdrop-blur-md border-[var(--glass-border)] shadow-none"
         }`}
-        style={{
-          boxShadow: isScrolled
-            ? "0 10px 30px -10px rgba(120, 81, 169, 0.15)"
-            : "none",
-        }}
         aria-label="Main Navigation"
       >
         {/* Zone 1: Single text element wordmark */}
@@ -129,13 +126,13 @@ export default function Navbar({ currentTheme, onToggleTheme }: NavbarProps) {
           {/* Theme Toggle Button */}
           <button
             onClick={onToggleTheme}
-            aria-label={`Switch to ${currentTheme === "light" ? "dark" : "light"} mode`}
+            aria-label={mounted && currentTheme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
             className="p-2 rounded-full border border-[var(--glass-border)] hover:bg-[var(--accent-light)] text-[var(--text-primary)] transition-transform active:scale-95"
           >
-            {currentTheme === "light" ? (
-              <Moon className="w-4 h-4 text-[#7851A9]" />
-            ) : (
+            {mounted && currentTheme === "dark" ? (
               <Sun className="w-4 h-4 text-[#9b6dff]" />
+            ) : (
+              <Moon className="w-4 h-4 text-[#7851A9]" />
             )}
           </button>
 

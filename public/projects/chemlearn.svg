@@ -1,0 +1,51 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" fill="#0d0a1a"/>
+  
+  <!-- Ambient Gradients -->
+  <circle cx="200" cy="180" r="220" fill="#7851A9" fill-opacity="0.25" filter="blur(60px)"/>
+  <circle cx="620" cy="320" r="240" fill="#9b6dff" fill-opacity="0.2" filter="blur(70px)"/>
+  
+  <!-- Subtle Grid Pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#9b6dff" stroke-width="0.5" stroke-opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="500" fill="url(#grid)"/>
+
+  <!-- Molecular Structure & Orbital 3D Mesh -->
+  <g transform="translate(400, 240)">
+    <!-- Central Atom -->
+    <circle cx="0" cy="0" r="26" fill="#7851A9" fill-opacity="0.9"/>
+    <circle cx="0" cy="0" r="14" fill="#ffffff"/>
+    
+    <!-- Orbit Rings -->
+    <ellipse cx="0" cy="0" rx="140" ry="50" stroke="#9b6dff" stroke-width="2" stroke-dasharray="4 4" transform="rotate(-25)" opacity="0.6"/>
+    <ellipse cx="0" cy="0" rx="140" ry="50" stroke="#c4a6ff" stroke-width="2" stroke-dasharray="4 4" transform="rotate(35)" opacity="0.6"/>
+    <ellipse cx="0" cy="0" rx="140" ry="50" stroke="#7851A9" stroke-width="2" stroke-dasharray="4 4" transform="rotate(95)" opacity="0.6"/>
+
+    <!-- Orbital Electrons / Atoms -->
+    <circle cx="-120" cy="-40" r="10" fill="#9b6dff"/>
+    <line x1="0" y1="0" x2="-120" y2="-40" stroke="#9b6dff" stroke-width="1.5" opacity="0.5"/>
+
+    <circle cx="110" cy="-60" r="12" fill="#c4a6ff"/>
+    <line x1="0" y1="0" x2="110" y2="-60" stroke="#c4a6ff" stroke-width="1.5" opacity="0.5"/>
+
+    <circle cx="100" cy="70" r="9" fill="#9b6dff"/>
+    <line x1="0" y1="0" x2="100" y2="70" stroke="#9b6dff" stroke-width="1.5" opacity="0.5"/>
+
+    <circle cx="-80" cy="90" r="11" fill="#7851A9"/>
+    <line x1="0" y1="0" x2="-80" y2="90" stroke="#7851A9" stroke-width="1.5" opacity="0.5"/>
+  </g>
+
+  <!-- UI Card Overlay Mockup -->
+  <rect x="50" y="340" width="300" height="110" rx="16" fill="#141126" fill-opacity="0.85" stroke="#9b6dff" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="75" y="375" fill="#c4a6ff" font-family="system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="2">CHEMLEARN NIGERIA</text>
+  <text x="75" y="405" fill="#ffffff" font-family="system-ui, sans-serif" font-size="16" font-weight="700">3D Interactive Chemistry</text>
+  <text x="75" y="428" fill="#a09cb0" font-family="system-ui, sans-serif" font-size="12">WebGL · Three.js · AI Assisted</text>
+
+  <!-- Status Chip -->
+  <rect x="620" y="45" width="130" height="32" rx="16" fill="#7851A9" fill-opacity="0.4" stroke="#9b6dff" stroke-width="1"/>
+  <circle cx="638" cy="61" r="4" fill="#a855f7"/>
+  <text x="650" y="66" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="600">3D Simulation</text>
+</svg>

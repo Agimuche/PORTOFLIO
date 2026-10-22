@@ -1,0 +1,35 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" fill="#130d1e"/>
+  
+  <circle cx="280" cy="180" r="220" fill="#a855f7" fill-opacity="0.2" filter="blur(70px)"/>
+  <circle cx="580" cy="320" r="240" fill="#ec4899" fill-opacity="0.15" filter="blur(70px)"/>
+
+  <!-- Conference Badge & Canvas Graphics -->
+  <g transform="translate(430, 160)">
+    <!-- Hanging Lanyard & Clip -->
+    <path d="M 0 -80 L -30 -30 L 30 -30 Z" fill="#6b21a8"/>
+    <rect x="-10" y="-30" width="20" height="15" rx="2" fill="#9ca3af"/>
+
+    <!-- Badge Card -->
+    <rect x="-85" y="-15" width="170" height="230" rx="12" fill="#2e1065" stroke="#c084fc" stroke-width="2"/>
+    <circle cx="0" cy="25" r="24" fill="#a855f7"/>
+    <rect x="-45" y="65" width="90" height="10" rx="3" fill="#ffffff"/>
+    <rect x="-30" y="82" width="60" height="8" rx="2" fill="#d8b4fe"/>
+    
+    <!-- QR Code vector square -->
+    <rect x="-35" y="105" width="70" height="70" rx="6" fill="#ffffff"/>
+    <rect x="-25" y="115" width="20" height="20" fill="#000000"/>
+    <rect x="5" y="115" width="20" height="20" fill="#000000"/>
+    <rect x="-25" y="145" width="20" height="20" fill="#000000"/>
+    <rect x="10" y="150" width="10" height="10" fill="#000000"/>
+  </g>
+
+  <!-- Overlay UI Label -->
+  <rect x="50" y="340" width="310" height="110" rx="16" fill="#2e1065" fill-opacity="0.9" stroke="#c084fc" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="75" y="375" fill="#c084fc" font-family="system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="2">CANVAS API UTILITY</text>
+  <text x="75" y="405" fill="#ffffff" font-family="system-ui, sans-serif" font-size="18" font-weight="700">Ticket Generator</text>
+  <text x="75" y="428" fill="#e9d5ff" font-family="system-ui, sans-serif" font-size="12">Conference Attendee Badges · HTML5 Canvas</text>
+
+  <rect x="630" y="45" width="120" height="32" rx="16" fill="#581c87" stroke="#c084fc" stroke-width="1"/>
+  <text x="645" y="66" fill="#f3e8ff" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Canvas Tool</text>
+</svg>

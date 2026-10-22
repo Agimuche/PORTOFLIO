@@ -1,0 +1,37 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" fill="#0d1117"/>
+  
+  <circle cx="280" cy="180" r="220" fill="#e44d26" fill-opacity="0.15" filter="blur(70px)"/>
+  <circle cx="580" cy="320" r="240" fill="#7851A9" fill-opacity="0.2" filter="blur(70px)"/>
+
+  <!-- Frontend HTML/CSS Track Architecture Graphic -->
+  <g transform="translate(420, 160)">
+    <!-- Code Editor Window -->
+    <rect x="-120" y="-30" width="250" height="180" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <circle cx="-100" cy="-15" r="5" fill="#ff5f56"/>
+    <circle cx="-85" cy="-15" r="5" fill="#ffbd2e"/>
+    <circle cx="-70" cy="-15" r="5" fill="#27c93f"/>
+
+    <!-- Code Syntax Mockup -->
+    <rect x="-100" y="15" width="60" height="10" rx="3" fill="#ff7b72"/>
+    <rect x="-30" y="15" width="80" height="10" rx="3" fill="#79c0ff"/>
+    
+    <rect x="-80" y="35" width="90" height="10" rx="3" fill="#a5d6ff"/>
+    <rect x="20" y="35" width="40" height="10" rx="3" fill="#ffa657"/>
+
+    <rect x="-80" y="55" width="70" height="10" rx="3" fill="#d2a8ff"/>
+    <rect x="0" y="55" width="100" height="10" rx="3" fill="#7ee787"/>
+
+    <rect x="-80" y="75" width="110" height="10" rx="3" fill="#79c0ff"/>
+    <rect x="-100" y="95" width="50" height="10" rx="3" fill="#ff7b72"/>
+  </g>
+
+  <!-- Overlay UI Label -->
+  <rect x="50" y="340" width="310" height="110" rx="16" fill="#161b22" fill-opacity="0.9" stroke="#30363d" stroke-width="1"/>
+  <text x="75" y="375" fill="#f0883e" font-family="system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="2">FRONTEND REPOSITORY</text>
+  <text x="75" y="405" fill="#ffffff" font-family="system-ui, sans-serif" font-size="18" font-weight="700">SH HTML Track</text>
+  <text x="75" y="428" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">Semantic HTML5 · Modern CSS3 · Vanilla JS</text>
+
+  <rect x="630" y="45" width="120" height="32" rx="16" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+  <text x="645" y="66" fill="#c9d1d9" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Open Source</text>
+</svg>

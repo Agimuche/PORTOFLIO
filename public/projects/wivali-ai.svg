@@ -1,0 +1,41 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" fill="#0b0816"/>
+  
+  <circle cx="300" cy="200" r="230" fill="#a855f7" fill-opacity="0.22" filter="blur(70px)"/>
+  <circle cx="600" cy="300" r="210" fill="#ec4899" fill-opacity="0.18" filter="blur(70px)"/>
+
+  <!-- AI Website Generation Schematic -->
+  <g transform="translate(360, 130)">
+    <!-- Browser Wireframe Frame -->
+    <rect x="-80" y="0" width="360" height="230" rx="12" fill="#17122a" stroke="#a855f7" stroke-width="1.5" stroke-opacity="0.6"/>
+    <!-- Window controls -->
+    <circle cx="-60" cy="18" r="5" fill="#ef4444"/>
+    <circle cx="-45" cy="18" r="5" fill="#f59e0b"/>
+    <circle cx="-30" cy="18" r="5" fill="#10b981"/>
+    <line x1="-80" y1="36" x2="280" y2="36" stroke="#2d224d" stroke-width="1"/>
+
+    <!-- Dynamic layout generation elements -->
+    <rect x="-60" y="55" width="140" height="20" rx="4" fill="#a855f7" fill-opacity="0.7"/>
+    <rect x="-60" y="85" width="200" height="10" rx="3" fill="#6b5b95" fill-opacity="0.4"/>
+    <rect x="-60" y="105" width="160" height="10" rx="3" fill="#6b5b95" fill-opacity="0.4"/>
+
+    <!-- Generated Cards -->
+    <rect x="-60" y="130" width="95" height="75" rx="6" fill="#241b3f" stroke="#a855f7" stroke-width="1" stroke-opacity="0.4"/>
+    <rect x="45" y="130" width="95" height="75" rx="6" fill="#241b3f" stroke="#ec4899" stroke-width="1" stroke-opacity="0.4"/>
+    <rect x="150" y="130" width="95" height="75" rx="6" fill="#241b3f" stroke="#a855f7" stroke-width="1" stroke-opacity="0.4"/>
+
+    <!-- Neural connection lines -->
+    <path d="M -120 120 C -70 80 -40 160 0 100" stroke="#f43f5e" stroke-width="2" stroke-dasharray="3 3"/>
+    <circle cx="-120" cy="120" r="6" fill="#f43f5e"/>
+  </g>
+
+  <!-- Overlay UI Label -->
+  <rect x="50" y="340" width="310" height="110" rx="16" fill="#17122a" fill-opacity="0.9" stroke="#a855f7" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="75" y="375" fill="#f472b6" font-family="system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="2">GEOCORE LIMITED NIGERIA</text>
+  <text x="75" y="405" fill="#ffffff" font-family="system-ui, sans-serif" font-size="18" font-weight="700">Wivali AI Website Builder</text>
+  <text x="75" y="428" fill="#a5b4fc" font-family="system-ui, sans-serif" font-size="12">Natural Language to Production Web Apps</text>
+
+  <!-- Badge -->
+  <rect x="640" y="45" width="110" height="32" rx="16" fill="#2e1065" stroke="#a855f7" stroke-width="1"/>
+  <text x="658" y="66" fill="#e9d5ff" font-family="system-ui, sans-serif" font-size="12" font-weight="600">AI Engine</text>
+</svg>

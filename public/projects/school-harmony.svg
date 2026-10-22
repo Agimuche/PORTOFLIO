@@ -1,0 +1,32 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" fill="#0b0f19"/>
+  
+  <circle cx="280" cy="180" r="220" fill="#4f46e5" fill-opacity="0.18" filter="blur(70px)"/>
+  <circle cx="580" cy="320" r="240" fill="#7851A9" fill-opacity="0.2" filter="blur(70px)"/>
+
+  <!-- School Management & Analytics Graphic -->
+  <g transform="translate(420, 160)">
+    <!-- Dashboard Window -->
+    <rect x="-110" y="-30" width="240" height="170" rx="10" fill="#1e1b4b" stroke="#6366f1" stroke-width="1.5"/>
+    <!-- Bar charts -->
+    <rect x="-85" y="70" width="20" height="50" rx="3" fill="#818cf8"/>
+    <rect x="-55" y="40" width="20" height="80" rx="3" fill="#6366f1"/>
+    <rect x="-25" y="55" width="20" height="65" rx="3" fill="#818cf8"/>
+    <rect x="5" y="25" width="20" height="95" rx="3" fill="#4f46e5"/>
+    <rect x="35" y="45" width="20" height="75" rx="3" fill="#818cf8"/>
+    <rect x="65" y="15" width="20" height="105" rx="3" fill="#a5b4fc"/>
+
+    <!-- Graduation Cap icon above -->
+    <path d="M 10 -60 L 50 -45 L 10 -30 L -30 -45 Z" fill="#6366f1"/>
+    <path d="M -15 -37 L -15 -20 Q 10 -10 35 -20 L 35 -37" fill="none" stroke="#6366f1" stroke-width="2"/>
+  </g>
+
+  <!-- Overlay UI Label -->
+  <rect x="50" y="340" width="310" height="110" rx="16" fill="#1e1b4b" fill-opacity="0.9" stroke="#6366f1" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="75" y="375" fill="#818cf8" font-family="system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="2">EDTECH MANAGEMENT</text>
+  <text x="75" y="405" fill="#ffffff" font-family="system-ui, sans-serif" font-size="18" font-weight="700">School Harmony Hub</text>
+  <text x="75" y="428" fill="#c7d2fe" font-family="system-ui, sans-serif" font-size="12">Next.js · Supabase · Analytics Dashboard</text>
+
+  <rect x="630" y="45" width="120" height="32" rx="16" fill="#312e81" stroke="#6366f1" stroke-width="1"/>
+  <text x="645" y="66" fill="#e0e7ff" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Live Portal</text>
+</svg>

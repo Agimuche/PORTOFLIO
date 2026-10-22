@@ -1,0 +1,41 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" fill="#090d16"/>
+  
+  <circle cx="240" cy="160" r="230" fill="#3b82f6" fill-opacity="0.2" filter="blur(70px)"/>
+  <circle cx="580" cy="340" r="240" fill="#7851A9" fill-opacity="0.25" filter="blur(70px)"/>
+
+  <!-- Isometric Building & Property Discovery Graphic -->
+  <g transform="translate(420, 160)">
+    <!-- Main Tower -->
+    <path d="M 0 100 L 90 50 L 90 220 L 0 270 Z" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+    <path d="M 0 100 L -90 50 L -90 220 L 0 270 Z" fill="#0f172a" stroke="#3b82f6" stroke-width="1.5"/>
+    <path d="M 0 100 L 90 50 L 0 0 L -90 50 Z" fill="#334155" stroke="#93c5fd" stroke-width="1.5"/>
+
+    <!-- Windows Glow -->
+    <line x1="20" y1="120" x2="70" y2="92" stroke="#60a5fa" stroke-width="3" opacity="0.8"/>
+    <line x1="20" y1="150" x2="70" y2="122" stroke="#60a5fa" stroke-width="3" opacity="0.8"/>
+    <line x1="20" y1="180" x2="70" y2="152" stroke="#60a5fa" stroke-width="3" opacity="0.8"/>
+    <line x1="20" y1="210" x2="70" y2="182" stroke="#60a5fa" stroke-width="3" opacity="0.8"/>
+
+    <line x1="-20" y1="120" x2="-70" y2="92" stroke="#93c5fd" stroke-width="3" opacity="0.6"/>
+    <line x1="-20" y1="150" x2="-70" y2="122" stroke="#93c5fd" stroke-width="3" opacity="0.6"/>
+    <line x1="-20" y1="180" x2="-70" y2="152" stroke="#93c5fd" stroke-width="3" opacity="0.6"/>
+
+    <!-- Map Pin marker -->
+    <g transform="translate(0, -20)">
+      <circle cx="0" cy="0" r="16" fill="#ef4444"/>
+      <circle cx="0" cy="0" r="7" fill="#ffffff"/>
+      <path d="M -8 10 L 0 26 L 8 10 Z" fill="#ef4444"/>
+    </g>
+  </g>
+
+  <!-- Overlay UI Label -->
+  <rect x="50" y="340" width="310" height="110" rx="16" fill="#0f172a" fill-opacity="0.9" stroke="#3b82f6" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="75" y="375" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="2">525SYSTEM NIGERIA LTD</text>
+  <text x="75" y="405" fill="#ffffff" font-family="system-ui, sans-serif" font-size="18" font-weight="700">Habeep Real Estate App</text>
+  <text x="75" y="428" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Mobile &amp; Web Platform · Property Systems</text>
+
+  <!-- Tag Pill -->
+  <rect x="630" y="45" width="120" height="32" rx="16" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+  <text x="650" y="66" fill="#93c5fd" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Cross-Platform</text>
+</svg>

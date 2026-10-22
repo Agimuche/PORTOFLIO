@@ -120,7 +120,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-xs text-[var(--text-secondary)] opacity-80 flex flex-col sm:flex-row items-center gap-1.5">
-          <span>&copy; {new Date().getFullYear()} {PERSONAL_INFO.name}.</span>
+          <span suppressHydrationWarning>&copy; {new Date().getFullYear()} {PERSONAL_INFO.name}.</span>
           <span className="hidden sm:inline">·</span>
           <span>Calabar Municipal, Cross River State, Nigeria</span>
         </div>

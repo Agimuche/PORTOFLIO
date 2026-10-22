@@ -41,13 +41,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
+      <body
+        className={`${inter.variable} ${outfit.variable} font-sans antialiased`}
+        suppressHydrationWarning
+      >
         <script
+          id="theme-init"
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
                 try {
-                  const saved = localStorage.getItem('theme');
+                  var saved = localStorage.getItem('theme');
                   if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                     document.documentElement.classList.add('dark-theme');
                   } else {
@@ -58,8 +62,6 @@ export default function RootLayout({
             `,
           }}
         />
-      </head>
-      <body className={`${inter.variable} ${outfit.variable} font-sans antialiased`}>
         <CustomCursor />
         {children}
       </body>

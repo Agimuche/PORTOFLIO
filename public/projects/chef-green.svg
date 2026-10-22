@@ -1,0 +1,32 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" fill="#08100d"/>
+  
+  <circle cx="280" cy="180" r="220" fill="#10b981" fill-opacity="0.18" filter="blur(70px)"/>
+  <circle cx="580" cy="320" r="240" fill="#059669" fill-opacity="0.18" filter="blur(70px)"/>
+
+  <!-- Culinary E-commerce & Delivery Dashboard Graphic -->
+  <g transform="translate(430, 160)">
+    <!-- Food Cloche / Plate dome -->
+    <path d="M -90 140 C -90 50 90 50 90 140 Z" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+    <circle cx="0" cy="40" r="12" fill="#34d399"/>
+    <line x1="-120" y1="145" x2="120" y2="145" stroke="#10b981" stroke-width="3"/>
+    
+    <!-- Steam / Aroma paths -->
+    <path d="M -30 20 Q -40 0 -25 -20" stroke="#6ee7b7" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M 0 15 Q 10 -5 -5 -25" stroke="#6ee7b7" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M 30 20 Q 20 0 35 -20" stroke="#6ee7b7" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- Paystack payment card element -->
+    <rect x="-80" y="170" width="160" height="35" rx="8" fill="#022c22" stroke="#10b981" stroke-width="1"/>
+    <text x="-50" y="193" fill="#34d399" font-family="system-ui, sans-serif" font-size="12" font-weight="700">PAYSTACK VERIFIED</text>
+  </g>
+
+  <!-- Overlay UI Label -->
+  <rect x="50" y="340" width="310" height="110" rx="16" fill="#064e3b" fill-opacity="0.9" stroke="#10b981" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="75" y="375" fill="#34d399" font-family="system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="2">CULINARY E-COMMERCE</text>
+  <text x="75" y="405" fill="#ffffff" font-family="system-ui, sans-serif" font-size="18" font-weight="700">CHEF Green Kitchen</text>
+  <text x="75" y="428" fill="#a7f3d0" font-family="system-ui, sans-serif" font-size="12">Online Order Platform · Paystack API</text>
+
+  <rect x="630" y="45" width="120" height="32" rx="16" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+  <text x="650" y="66" fill="#a7f3d0" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Online Store</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" fill="#0c0e14"/>
+  
+  <circle cx="280" cy="180" r="220" fill="#d97706" fill-opacity="0.18" filter="blur(70px)"/>
+  <circle cx="580" cy="320" r="240" fill="#7851A9" fill-opacity="0.22" filter="blur(70px)"/>
+
+  <!-- Luxury Hotel Architecture & Booking Geometry -->
+  <g transform="translate(430, 160)">
+    <!-- Architectural Pavilion Arch -->
+    <path d="M -120 180 L -120 60 Q 0 -60 120 60 L 120 180 Z" fill="#181a24" stroke="#d97706" stroke-width="1.5" stroke-opacity="0.6"/>
+    <!-- Inner Arch Frame -->
+    <path d="M -90 180 L -90 75 Q 0 -20 90 75 L 90 180 Z" fill="#12141c" stroke="#f59e0b" stroke-width="1" stroke-opacity="0.4"/>
+    <!-- Geometric chandelier rays -->
+    <circle cx="0" cy="40" r="18" fill="#fbbf24" fill-opacity="0.4"/>
+    <line x1="0" y1="-20" x2="0" y2="40" stroke="#f59e0b" stroke-width="2"/>
+    <line x1="-30" y1="40" x2="30" y2="40" stroke="#f59e0b" stroke-width="1.5"/>
+    <line x1="-20" y1="55" x2="20" y2="55" stroke="#f59e0b" stroke-width="1.5"/>
+    <!-- Pool reflections -->
+    <line x1="-140" y1="200" x2="140" y2="200" stroke="#38bdf8" stroke-width="2" stroke-opacity="0.4"/>
+    <line x1="-100" y1="215" x2="100" y2="215" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.3"/>
+  </g>
+
+  <!-- Overlay UI Label -->
+  <rect x="50" y="340" width="310" height="110" rx="16" fill="#181a24" fill-opacity="0.9" stroke="#d97706" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="75" y="375" fill="#f59e0b" font-family="system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="2">HOSPITALITY SUITE</text>
+  <text x="75" y="405" fill="#ffffff" font-family="system-ui, sans-serif" font-size="18" font-weight="700">Aurelia Hotel &amp; Resort</text>
+  <text x="75" y="428" fill="#9ca3af" font-family="system-ui, sans-serif" font-size="12">Luxury Booking Platform &amp; Concierge System</text>
+
+  <rect x="630" y="45" width="120" height="32" rx="16" fill="#451a03" stroke="#f59e0b" stroke-width="1"/>
+  <text x="648" y="66" fill="#fef3c7" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Production Live</text>
+</svg>
